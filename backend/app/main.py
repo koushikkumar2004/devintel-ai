@@ -6,6 +6,7 @@ from app.routes.ai_routes import router as ai_router
 from app.routes.career_routes import router as career_router
 from app.models import chat
 from app.routes.chat_routes import router as chat_router
+from app.routes.analytics_routes import router as analytics_router
 
 app = FastAPI()
 
@@ -15,6 +16,7 @@ app.include_router(user_router)
 app.include_router(ai_router)
 app.include_router(career_router)
 app.include_router(chat_router)
+app.include_router(analytics_router)
 
 @app.get("/")
 def root():
