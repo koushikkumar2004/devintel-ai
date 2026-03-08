@@ -3,6 +3,7 @@ from app.database import engine, Base
 from app.models import user
 from app.routes.user_routes import router as user_router
 from app.routes.ai_routes import router as ai_router
+from app.routes.career_routes import router as career_router
 
 app = FastAPI()
 
@@ -10,6 +11,7 @@ Base.metadata.create_all(bind=engine)
 
 app.include_router(user_router)
 app.include_router(ai_router)
+app.include_router(career_router)
 
 @app.get("/")
 def root():
